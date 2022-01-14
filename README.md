@@ -18,7 +18,7 @@ dingtalk:
 monitor:
   # 监控目录
   path: /tmp/
-  # 一下目录变更不做处理
+  # 以下目录变更不做处理
   ignoreflag: false
   ignorepath:
     - /tmp/log/
