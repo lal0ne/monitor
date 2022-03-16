@@ -1,4 +1,4 @@
-package lib
+package conf
 
 // 配置文件对应结构体
 type Cfg struct {

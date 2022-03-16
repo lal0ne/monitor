@@ -1,12 +1,15 @@
-package lib
+package dingtalk
 
 import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"monitor/conf"
 )
 
+// 发送钉钉消息
 func SendMsg(NowTime, msg string) {
 	text := `{
 		"msgtype": "text",
@@ -15,11 +18,11 @@ func SendMsg(NowTime, msg string) {
 		}
 	}`
 	msg = strings.ReplaceAll(msg, "\\", "/")
-	_msg := CFG.Dingtalk.KEY + "： 异常\n事件： " + msg + "\n时间： " + NowTime
+	_msg := conf.CFG.Dingtalk.KEY + "： 异常\n事件： " + msg + "\n时间： " + NowTime
 	content := fmt.Sprintf(text, _msg)
 	// fmt.Println(content)
 	client := &http.Client{}
-	req, err := http.NewRequest("POST", CFG.Dingtalk.API, strings.NewReader(content))
+	req, err := http.NewRequest("POST", conf.CFG.Dingtalk.API, strings.NewReader(content))
 	if err != nil {
 		panic(err)
 	}

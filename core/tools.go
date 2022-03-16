@@ -1,10 +1,12 @@
-package lib
+package core
 
 import (
 	"bufio"
 	"os"
 	"path"
 	"strings"
+
+	"monitor/conf"
 )
 
 // 判读字符串是否包含列表中某个值
@@ -25,7 +27,7 @@ func StrContainOrInList(rawStr string, checkStrList []string) bool {
 // 记录文件操作日志
 func WriteLog(msg string) {
 	// 打开日志文件
-	file, err := os.OpenFile(CFG.LOG, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
+	file, err := os.OpenFile(conf.CFG.LOG, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
 	if err != nil {
 		panic(err)
 	}

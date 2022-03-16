@@ -1,4 +1,4 @@
-package lib
+package conf
 
 import (
 	"fmt"
@@ -33,5 +33,6 @@ func init() {
 		panic(err)
 	}
 
+	// 处理参数是否符合
 	ParamWringOrErr()
 }

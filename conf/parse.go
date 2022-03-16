@@ -1,10 +1,11 @@
-package lib
+package conf
 
 import (
 	// "fmt"
 	"os"
 )
 
+// 判断其中部分参数是否符合规则
 func ParamWringOrErr() {
 	if CFG.Dingtalk.FLAG {
 		if CFG.Dingtalk.API == "" || CFG.Dingtalk.KEY == "" {

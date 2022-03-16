@@ -1,8 +1,9 @@
 package main
 
 import (
+	"monitor/cmd"
 	// "fmt"
-	"monitor/lib"
+	_ "monitor/conf"
 )
 
 func main() {
@@ -13,5 +14,5 @@ func main() {
 	// } else {
 	// 	fmt.Println("no")
 	// }
-	lib.Run()
+	cmd.Run()
 }
