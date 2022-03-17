@@ -12,6 +12,8 @@ func Run() {
 	for _, monitorContent := range conf.CFG.Monitor {
 		go RunOneWatch(monitorContent)
 	}
+	// 阻塞循环
+	select {}
 }
 
 // 文件监控执行
@@ -21,6 +23,4 @@ func RunOneWatch(monitor conf.Monitor) {
 		Watch: watch,
 	}
 	w.WatchDir(monitor)
-	// 阻塞循环
-	select {}
 }
