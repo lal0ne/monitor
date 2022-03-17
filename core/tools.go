@@ -1,12 +1,8 @@
 package core
 
 import (
-	"bufio"
-	"os"
 	"path"
 	"strings"
-
-	"monitor/conf"
 )
 
 // 判读字符串是否包含列表中某个值
@@ -22,21 +18,6 @@ func StrContainOrInList(rawStr string, checkStrList []string) bool {
 	}
 
 	return false
-}
-
-// 记录文件操作日志
-func WriteLog(msg string) {
-	// 打开日志文件
-	file, err := os.OpenFile(conf.CFG.LOG, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-
-	// 写入日志文件
-	write := bufio.NewWriter(file)
-	write.WriteString(msg + "\n")
-	write.Flush()
 }
 
 // 文件后缀名是否在列表中

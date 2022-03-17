@@ -5,7 +5,7 @@ type Cfg struct {
 	LOGFLAG  bool
 	LOG      string
 	Dingtalk Dingtalk
-	Monitor  Monitor
+	Monitor  []Monitor
 }
 
 type Dingtalk struct {

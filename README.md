@@ -16,16 +16,25 @@ dingtalk:
   key: XXX
 # 监控配置
 monitor:
-  # 监控目录
-  path: /tmp/
-  # 以下目录变更不做处理
-  ignoreflag: false
-  ignorepath:
-    - /tmp/log/
-  # 以下后缀名为黑名单，即该类型均告警[优先级没有ignorepath高]
-  typeflag: true
-  type:
-    - php
+  -
+    # 监控目录
+    path: /tmp/
+    # 以下目录变更不做处理
+    ignoreflag: false
+    ignorepath:
+      - /tmp/log/
+    # 以下后缀名为黑名单，即该类型均告警[优先级没有ignorepath高]
+    typeflag: true
+    type:
+      - php
+  -
+    path: /root/
+    ignoreflag: true
+    ignorepath:
+      - /root/log/
+    typeflag: true
+    type:
+      - php
 ```
 
 ## 运行
@@ -40,5 +49,5 @@ monitor:
 
 ## todo
 
-- [ ] 多个目录
+- [x] 多个目录
 - [ ] 黑名单正则

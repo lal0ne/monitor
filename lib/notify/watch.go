@@ -9,6 +9,7 @@ import (
 	// "strings"
 	"time"
 
+	"monitor/conf"
 	"monitor/lib"
 )
 
@@ -17,9 +18,9 @@ type Watch struct {
 }
 
 //监控目录
-func (w *Watch) WatchDir(dir string) {
+func (w *Watch) WatchDir(monitor conf.Monitor) {
 	//通过Walk来遍历目录下的所有子目录
-	filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+	filepath.Walk(monitor.PATH, func(path string, info os.FileInfo, err error) error {
 		//这里判断是否为目录，只需监控目录即可
 		//目录下的文件也在监控范围内，不需要我们一个一个加
 		if info.IsDir() {
@@ -78,7 +79,7 @@ func (w *Watch) WatchDir(dir string) {
 				}
 
 				if msg != "" {
-					go lib.HandleIgnoreMsg(nowTime, msg, ev.Name)
+					go lib.HandleIgnoreMsg(nowTime, msg, ev.Name, monitor)
 					//fmt.Println(nowTime + " Event: " + msg)
 				}
 

@@ -1,14 +1,26 @@
-logflag: false
+# 文件变更记录
+logflag: true
 log: monitor.log
+# 钉钉配置信息
 dingtalk:
-  flag: true
+  flag: false
   api: https://oapi.dingtalk.com/robot/send?access_token=XXXXXX
   key: XXXX
+# 监控目录配置信息
 monitor:
-  path: /tmp/
-  ignoreflag: true
-  ignorepath:
-    - /tmp/log/
-  typeflag: true
-  type:
-    - php
+  -
+    path: /tmp/
+    ignoreflag: true
+    ignorepath:
+      - /tmp/log/
+    typeflag: true
+    type:
+      - php
+  -
+    path: /root/
+    ignoreflag: true
+    ignorepath:
+      - /root/log/
+    typeflag: true
+    type:
+      - php
