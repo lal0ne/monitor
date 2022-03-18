@@ -2,6 +2,7 @@ package core
 
 import (
 	"path"
+	"regexp"
 	"strings"
 )
 
@@ -24,7 +25,8 @@ func StrContainOrInList(rawStr string, checkStrList []string) bool {
 func FileExtInList(rawName string, checkExtList []string) bool {
 	rawExt := path.Ext(rawName)
 	for _, checkExt := range checkExtList {
-		if rawExt != "" && (rawExt == checkExt || rawExt[1:] == checkExt) {
+		r, _ := regexp.Compile(checkExt)
+		if rawExt != "" && r.MatchString(rawExt[1:]) {
 			return true
 		}
 	}

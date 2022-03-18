@@ -15,7 +15,7 @@ monitor:
       - /tmp/log/
     typeflag: true
     type:
-      - php
+      - ^php([0-9]*)
   -
     path: /root/
     ignoreflag: true
@@ -23,4 +23,4 @@ monitor:
       - /root/log/
     typeflag: true
     type:
-      - php
+      - ^php([0-9]*)

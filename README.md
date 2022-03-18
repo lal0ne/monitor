@@ -26,7 +26,7 @@ monitor:
     # 以下后缀名为黑名单，即该类型均告警[优先级没有ignorepath高]
     typeflag: true
     type:
-      - php
+      - ^php([0-9]*)
   -
     path: /root/
     ignoreflag: true
@@ -34,7 +34,7 @@ monitor:
       - /root/log/
     typeflag: true
     type:
-      - php
+      - ^php([0-9]*)
 ```
 
 ## 运行
@@ -50,4 +50,4 @@ monitor:
 ## todo
 
 - [x] 多个目录
-- [ ] 黑名单正则
+- [x] 黑名单正则
