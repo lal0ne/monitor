@@ -8,6 +8,11 @@ import (
 
 // 信息处理中心
 func HandleIgnoreMsg(NowTime, msg, evName string, monitor conf.Monitor) {
+	// 判断是否为文件夹
+	if core.IsDir(evName) {
+		return
+	}
+
 	// 判读是否写入记录
 	if conf.CFG.LOGFLAG && (len(evName) < len(conf.CFG.LOG) || conf.CFG.LOG != evName[len(evName)-len(conf.CFG.LOG):]) {
 		_msg := "time： " + NowTime + " event： " + msg + "\n"
