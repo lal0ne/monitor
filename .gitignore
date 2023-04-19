@@ -1,6 +1,9 @@
 # Goland
 .idea/*
 
+# build
+out/
+
 # info
 *.txt
 
