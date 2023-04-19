@@ -1,6 +1,6 @@
 NAME=monitor
 # Output File Location
-DIR=out/
+DIR=out
 $(shell mkdir -p ${DIR})
 
 # Go build flags
