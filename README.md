@@ -45,9 +45,10 @@ monitor:
 
 [下载地址](https://github.com/lal0ne/monitor/releases)
 
-本人提供`linux`和`win`下的可执行程序。
+提供`linux`、`darwin`和`win`下的可执行程序。
 
 ## todo
 
 - [x] 多个目录
 - [x] 黑名单正则
+- [ ] 日志分割
