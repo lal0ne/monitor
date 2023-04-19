@@ -20,7 +20,7 @@ func WriteLog(msg string) {
 
 	// 写入日志文件
 	write := bufio.NewWriter(file)
-	write.WriteString(msg + "\n")
+	write.WriteString(msg)
 	write.Flush()
 
 	// 关闭文件锁
